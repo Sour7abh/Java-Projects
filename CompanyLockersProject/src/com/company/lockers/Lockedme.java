@@ -144,7 +144,6 @@ public class Lockedme {
     		File fl = new File(projectPath+'\\'+filename);
     		if (fl.exists())
     		{
-    			fl.delete();
     		System.out.println("File is available.");
     		}
     		else
