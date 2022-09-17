@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+<hibernate-mapping>
+<class name="com.beans.Employee" table="emp_inheritance1" discriminator-value="emp">
+	 <id name="id" column="emp_id">
+	 <generator class="increment"></generator>
+	</id>
+	<discriminator column="type_of_employee" type="string"></discriminator>
+	<property name="name" column="emp_name"></property>
+ 		
+ 		<subclass name="com.beans.RegularEmployee" discriminator-value="reg_emp">
+ 		<property name="salary" column="emp_salary"></property>
+ 		<property name="bonus" column="emp_bonus"></property>
+ 		</subclass>
+ 		
+ 		<subclass name="com.beans.ContractEmployee" discriminator-value="con_emp">
+ 		<property name="pay_per_hour" column="emp_pay_per_hour"></property>
+ 		<property name="contract_duration" column="emp_contract_duration"></property>
+ 		</subclass>
+ 		
+</class>
+</hibernate-mapping>

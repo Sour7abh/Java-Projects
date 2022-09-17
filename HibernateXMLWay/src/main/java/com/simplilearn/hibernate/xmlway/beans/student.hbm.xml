@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+<hibernate-mapping>
+<class name="com.simplilearn.hibernate.xmlway.beans.Student" table="studentdata1">
+	 <id name="rollNo" column="roll_no">
+	<!-- every table in hibernate must have a field for Primary key,
+	 id tag is used to create primary key -->
+	 <generator class="increment"></generator>
+	</id>
+	<property name="firstName" column="first_name"></property>
+ 		<property name="lastName"  column="last_name"></property>
+ 		<property name="grade" column="grade"></property>
+</class>
+</hibernate-mapping>

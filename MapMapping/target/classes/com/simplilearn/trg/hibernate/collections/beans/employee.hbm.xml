@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+<hibernate-mapping>
+<class name="com.simplilearn.trg.hibernate.collections.beans.Employee" table="emp_map">
+	 <id name="empID" column="emp_ID">
+	 <generator class="increment"></generator>
+	</id>
+	<property name="empName" column="emp_Name"></property>
+ 		<map name="technologyExperience" table="emp_map_techExperience">
+ 		<key column="emp_ID"></key>
+ 		<index column="technology" type="string"></index>
+ 		<element column="exp" type="int"></element>
+ 		</map>
+ 		
+</class>
+</hibernate-mapping>
